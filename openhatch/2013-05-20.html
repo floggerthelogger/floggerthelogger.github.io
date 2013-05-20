@@ -166,5 +166,67 @@
 <br />
 <a href="#23:36:44" name="23:36:44" class="time">[23:36:44]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And now I know what to look for!
 <br />
+<a href="#23:36:50" name="23:36:50" class="time">[23:36:50]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> BTW, having these in openhatch.org/search/ will be pretty thrilling!
+<br />
+<a href="#23:36:55" name="23:36:55" class="time">[23:36:55]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Thank you for taking the time to add them!
+<br />
+<a href="#23:37:40" name="23:37:40" class="time">[23:37:40]</a> <span class="person" style="color:#f36f41">&lt;balloons&gt;</span> paulproteus, your most welcome. I think I had heard of the site at some point, but I came across it again so I thought I would add some new opportunities :-)
+<br />
+<a href="#23:37:44" name="23:37:44" class="time">[23:37:44]</a> <span class="person" style="color:#066b96">&lt;Aaron1011&gt;</span> paulproteus: How does my pull request look?
+<br />
+<a href="#23:38:24" name="23:38:24" class="time">[23:38:24]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I'm testing it now. First thing I'm doing is removing the code changes and keeping the test case, and going to run that test case.
+<br />
+<a href="#23:38:51" name="23:38:51" class="time">[23:38:51]</a> <span class="person" style="color:#066b96">&lt;Aaron1011&gt;</span> Ok, thanks!
+<br />
+<a href="#23:46:20" name="23:46:20" class="time">[23:46:20]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> aldeka: I'm so hesitant about your patch because I don't really get what any_facet means.
+<br />
+<a href="#23:46:48" name="23:46:48" class="time">[23:46:48]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> er, Aaron1011
+<br />
+<a href="#23:47:21" name="23:47:21" class="time">[23:47:21]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I also don't get why affecting the truthiness of this query object relates to fixing the bug.
+<br />
+<a href="#23:47:29" name="23:47:29" class="time">[23:47:29]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Those are things that are typically explained in a commit log message.
+<br />
+<a href="#23:48:15" name="23:48:15" class="time">[23:48:15]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> So at the risk of sounding pedantic, I'll test this code and if it works, I'll say I'm happy with it, but I won't be willing to actually merge it until the above two questions are answered somewhere, in a comment in the test case, or in the commit log message.
+<br />
+<a href="#23:50:06" name="23:50:06" class="time">[23:50:06]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Also I kind of wonder if there's a simpler fix.
+<br />
+<a href="#23:50:13" name="23:50:13" class="time">[23:50:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> In particular, maybe you can do:
+<br />
+<a href="#23:50:39" name="23:50:39" class="time">[23:50:39]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> if facet in GET and not GET.get(facet):
+<br />
+<a href="#23:50:39" name="23:50:39" class="time">[23:50:39]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span>    del GET[facet]
+<br />
+<a href="#23:50:54" name="23:50:54" class="time">[23:50:54]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Or something to that effect, as a way of normalizing the data so the current function works.
+<br />
+<a href="#23:52:01" name="23:52:01" class="time">[23:52:01]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> But I find it very reason about these questions without indications in the comments or commit log message about the rationale for the change.
+<br />
+<a href="#23:52:19" name="23:52:19" class="time">[23:52:19]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Aaron1011: If you're around, cool! If not, I'll leave similar comments on the pull request itself.
+<br />
+<a href="#23:52:22" name="23:52:22" class="time">[23:52:22]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Thank you for submitting the fix!
+<br />
+<a href="#23:53:39" name="23:53:39" class="time">[23:53:39]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> The more I read <a href="http://openhatch.org/bugs/issue766" target="_blank">http://openhatch.org</a> the less confident I am I understand the bug at all.
+<br />
+<a href="#23:53:41" name="23:53:41" class="time">[23:53:41]</a> -!- <span class="join">jdunck</span> [jdunck!~jdunck@django/committer/jdunck] has joined #openhatch
+<br />
+<a href="#23:53:42" name="23:53:42" class="time">[23:53:42]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I will do so again..
+<br />
+<a href="#23:54:43" name="23:54:43" class="time">[23:54:43]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Aaron1011: Actually, can you explain precisely what click path leads to the bad behavior?
+<br />
+<a href="#23:55:30" name="23:55:30" class="time">[23:55:30]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> ohhhhhhhhhh I see.
+<br />
+<a href="#23:55:39" name="23:55:39" class="time">[23:55:39]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Okay.
+<br />
+<a href="#23:56:18" name="23:56:18" class="time">[23:56:18]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Okay, yes. I understand the bug now.
+<br />
+<a href="#23:59:03" name="23:59:03" class="time">[23:59:03]</a> <span class="person" style="color:#066b96">&lt;Aaron1011&gt;</span> paulproteus: What is causing this bug is that when the search page decides whether or not to return results, it evaluates the truth of the query
+<br />
+<a href="#23:59:13" name="23:59:13" class="time">[23:59:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Right, I *just* figured that out.
+<br />
+<a href="#23:59:24" name="23:59:24" class="time">[23:59:24]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Admittedly I should have known that for ages, since I probably (co-)wrote this code.
+<br />
+<a href="#23:59:35" name="23:59:35" class="time">[23:59:35]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> But the test case should indicate that's the reason it tests that, for example.
+<br />
+<a href="#23:59:44" name="23:59:44" class="time">[23:59:44]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I officially bless this code, but the comments and/or commit log need improvement.
+<br />
 </body>
 </html>
