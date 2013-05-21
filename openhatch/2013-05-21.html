@@ -1,0 +1,268 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
+"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <title>#openhatch | Logs for 2013-05-21</title>
+    <style type="text/css">
+        body {
+            background-color: #F8F8FF;
+            font-family: Fixed, monospace;
+            font-size: 13px;
+        }
+        h1 {
+            font-family: sans-serif;
+            font-size: 24px;
+            text-align: center;
+        }
+        a, .time {
+            color: #525552;
+            text-decoration: none;
+        }
+        a:hover, .time:hover { text-decoration: underline; }
+        .person { color: #DD1144; }
+        .join, .part, .quit, .kick, .mode, .topic, .nick { color: #42558C; }
+        .notice { color: #AE768C; }
+    </style>
+  </head>
+  <body>
+  <h1>#openhatch | Logs for 2013-05-21</h1>
+  <a href="..">Back</a><br />
+<a href="#00:00:00" name="00:00:00" class="time">[00:00:00]</a> <span class="person" style="color:#066b96">&lt;Aaron1011&gt;</span> Okay, I will improve that
+<br />
+<a href="#00:01:54" name="00:01:54" class="time">[00:01:54]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Yay!
+<br />
+<a href="#00:02:08" name="00:02:08" class="time">[00:02:08]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I hope the above indicates the improvements needed, but it's very rambly so if needed I can summarize/repeat.
+<br />
+<a href="#00:02:30" name="00:02:30" class="time">[00:02:30]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> fijal: I have a crazy question for you.
+<br />
+<a href="#00:03:14" name="00:03:14" class="time">[00:03:14]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> If I want to promote the creation of "dynamic" web apps that are "just" scripts written in Python, embedded within static HTML+CSS+JS blobs, what are some useful tricks that can be used to make that run speedily, and what do you think is the speediest reasonable way to do that?
+<br />
+<a href="#00:03:44" name="00:03:44" class="time">[00:03:44]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Oh, written in Python and presumably compiled to something that runs in the browser.
+<br />
+<a href="#00:03:46" name="00:03:46" class="time">[00:03:46]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> paulproteus: yes?
+<br />
+<a href="#00:04:07" name="00:04:07" class="time">[00:04:07]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And what is a reasonably plausible expected speed level to expect from such a thing?
+<br />
+<a href="#00:04:12" name="00:04:12" class="time">[00:04:12]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> so you can't compile anything python to run in a browser
+<br />
+<a href="#00:04:23" name="00:04:23" class="time">[00:04:23]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> pygwt seems to be able to
+<br />
+<a href="#00:04:30" name="00:04:30" class="time">[00:04:30]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> bleh
+<br />
+<a href="#00:04:31" name="00:04:31" class="time">[00:04:31]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> no
+<br />
+<a href="#00:04:32" name="00:04:32" class="time">[00:04:32]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> it's not python
+<br />
+<a href="#00:04:36" name="00:04:36" class="time">[00:04:36]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> it's a python-looking JS
+<br />
+<a href="#00:04:45" name="00:04:45" class="time">[00:04:45]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And/or you could "Just" embed CPython and your code compiled down with emscripten.
+<br />
+<a href="#00:05:13" name="00:05:13" class="time">[00:05:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I am thinking it'd be nice if at Boston Python project night-type things, we could tell people, "You can write app-like logic in Python and here is how you embed it in your source tree and create a build process that generates browser-executable artifacts."
+<br />
+<a href="#00:05:26" name="00:05:26" class="time">[00:05:26]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I forgot the precise use case I'm going for, but I seem to recall wanting this and you seem to be here.
+<br />
+<a href="#00:05:31" name="00:05:31" class="time">[00:05:31]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> that's very slow
+<br />
+<a href="#00:05:45" name="00:05:45" class="time">[00:05:45]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> cpython via emscripten
+<br />
+<a href="#00:06:37" name="00:06:37" class="time">[00:06:37]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> That's what I found, yeah.
+<br />
+<a href="#00:06:39" name="00:06:39" class="time">[00:06:39]</a> -!- <span class="quit">audreyr</span> has quit [Quit: audreyr]
+<br />
+<a href="#00:06:43" name="00:06:43" class="time">[00:06:43]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> e.g. paultag's <a href="http://hy.pault.ag/" target="_blank">http://hy.pault.ag</a> could be purely client-side, which would be cool!
+<br />
+<a href="#00:07:54" name="00:07:54" class="time">[00:07:54]</a> -!- <span class="join">audreyr</span> [audreyr!~audreyr@dre158.neoplus.adsl.tpnet.pl] has joined #openhatch
+<br />
+<a href="#00:09:28" name="00:09:28" class="time">[00:09:28]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Yay rehi aukani
+<br />
+<a href="#00:09:31" name="00:09:31" class="time">[00:09:31]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> audreyr even.
+<br />
+<a href="#00:09:57" name="00:09:57" class="time">[00:09:57]</a> <span class="person" style="color:#dc25aa">&lt;audreyr&gt;</span> Yay :)
+<br />
+<a href="#00:12:24" name="00:12:24" class="time">[00:12:24]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> paulproteus: i think it's way too much work for such a stupid objective
+<br />
+<a href="#00:12:31" name="00:12:31" class="time">[00:12:31]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Hah.
+<br />
+<a href="#00:12:31" name="00:12:31" class="time">[00:12:31]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> paulproteus: IMO we need to think bigger
+<br />
+<a href="#00:12:36" name="00:12:36" class="time">[00:12:36]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Very well.
+<br />
+<a href="#00:12:41" name="00:12:41" class="time">[00:12:41]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> we need to think how to make distributed programs easier
+<br />
+<a href="#00:12:43" name="00:12:43" class="time">[00:12:43]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I do want to save Python from irrelevance.
+<br />
+<a href="#00:12:46" name="00:12:46" class="time">[00:12:46]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> It'd be cool.
+<br />
+<a href="#00:12:51" name="00:12:51" class="time">[00:12:51]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> and not how to run this stupid things in the browser
+<br />
+<a href="#00:12:56" name="00:12:56" class="time">[00:12:56]</a> <span class="nick">Nischayn22</span> is now known as <span class="nick">Nischayn22|Away</span>
+<br />
+<a href="#00:13:04" name="00:13:04" class="time">[00:13:04]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> python on the client side is irrelevant
+<br />
+<a href="#00:13:11" name="00:13:11" class="time">[00:13:11]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> python on the server side is not going anywhere
+<br />
+<a href="#00:13:31" name="00:13:31" class="time">[00:13:31]</a> -!- <span class="quit">MacDiva</span> has quit [Quit: MacDiva]
+<br />
+<a href="#00:15:26" name="00:15:26" class="time">[00:15:26]</a> <span class="person" style="color:#d2ed20">&lt;fijal&gt;</span> but I don't know how to do it
+<br />
+<a href="#00:17:02" name="00:17:02" class="time">[00:17:02]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> So let's just do random things we do know how to do!
+<br />
+<a href="#00:17:03" name="00:17:03" class="time">[00:17:03]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Maybe.
+<br />
+<a href="#00:17:19" name="00:17:19" class="time">[00:17:19]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> ipython notebook is kind of like that
+<br />
+<a href="#00:38:49" name="00:38:49" class="time">[00:38:49]</a> -!- <span class="join">floggerthelogger</span> [floggerthelogger!~floggerth@shell.thinkmo.de] has joined #openhatch
+<br />
+<a href="#00:40:03" name="00:40:03" class="time">[00:40:03]</a> -!- <span class="join">sunu</span> [sunu!~tmishra@shell.thinkmo.de] has joined #openhatch
+<br />
+<a href="#00:44:05" name="00:44:05" class="time">[00:44:05]</a> -!- <span class="join">tmishra</span> [tmishra!~tmishra@shell.thinkmo.de] has joined #openhatch
+<br />
+<a href="#00:44:34" name="00:44:34" class="time">[00:44:34]</a> <span class="nick">tmishra</span> is now known as <span class="nick">sunu_</span>
+<br />
+<a href="#00:45:31" name="00:45:31" class="time">[00:45:31]</a> -!- <span class="quit">sunu</span> has quit [Ping timeout: 264 seconds]
+<br />
+<a href="#00:47:23" name="00:47:23" class="time">[00:47:23]</a> -!- <span class="quit">qgil</span> has quit [Ping timeout: 252 seconds]
+<br />
+<a href="#00:56:19" name="00:56:19" class="time">[00:56:19]</a> -!- <span class="quit">chandankumar</span> has quit [Ping timeout: 260 seconds]
+<br />
+<a href="#01:08:12" name="01:08:12" class="time">[01:08:12]</a> -!- <span class="quit">FHaag</span> has quit [Quit: Leaving.]
+<br />
+<a href="#01:44:22" name="01:44:22" class="time">[01:44:22]</a> -!- <span class="join">briandant</span> [briandant!~briandant@50-199-232-225-static.hfc.comcastbusiness.net] has joined #openhatch
+<br />
+<a href="#01:56:03" name="01:56:03" class="time">[01:56:03]</a> -!- <span class="quit">fijal</span> has quit [Ping timeout: 260 seconds]
+<br />
+<a href="#02:03:27" name="02:03:27" class="time">[02:03:27]</a> -!- <span class="join">fijal</span> [fijal!~fijal@105-236-242-198.access.mtnbusiness.co.za] has joined #openhatch
+<br />
+<a href="#02:04:14" name="02:04:14" class="time">[02:04:14]</a> <span class="nick">awjr</span> is now known as <span class="nick">awjr_afk</span>
+<br />
+<a href="#02:09:46" name="02:09:46" class="time">[02:09:46]</a> -!- <span class="quit">fijal</span> has quit [Ping timeout: 276 seconds]
+<br />
+<a href="#02:21:13" name="02:21:13" class="time">[02:21:13]</a> -!- <span class="join">fijal</span> [fijal!~fijal@105-236-242-198.access.mtnbusiness.co.za] has joined #openhatch
+<br />
+<a href="#02:22:07" name="02:22:07" class="time">[02:22:07]</a> -!- <span class="join">Sixmsj</span> [Sixmsj!~Sixmsj@c-67-164-118-190.hsd1.ca.comcast.net] has joined #openhatch
+<br />
+<a href="#02:27:19" name="02:27:19" class="time">[02:27:19]</a> -!- <span class="quit">Sixmsj</span> has quit [Ping timeout: 276 seconds]
+<br />
+<a href="#02:28:07" name="02:28:07" class="time">[02:28:07]</a> -!- <span class="join">Sixmsj</span> [Sixmsj!~Sixmsj@c-67-164-118-190.hsd1.ca.comcast.net] has joined #openhatch
+<br />
+<a href="#02:30:51" name="02:30:51" class="time">[02:30:51]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> mlinksva: I think I will write a PyCon blog post, and hope to ship that within 24h; then hopefully newsletter by Wed morning.
+<br />
+<a href="#02:33:47" name="02:33:47" class="time">[02:33:47]</a> -!- <span class="quit">jdunck</span> has quit [Quit: Computer has gone to sleep.]
+<br />
+<a href="#02:43:43" name="02:43:43" class="time">[02:43:43]</a> -!- <span class="quit">mindspillage</span> has quit [Ping timeout: 264 seconds]
+<br />
+<a href="#02:49:24" name="02:49:24" class="time">[02:49:24]</a> <span class="nick">awjr_afk</span> is now known as <span class="nick">awjr</span>
+<br />
+<a href="#03:08:14" name="03:08:14" class="time">[03:08:14]</a> -!- <span class="join">mindspillage</span> [mindspillage!~kat@50-196-147-157-static.hfc.comcastbusiness.net] has joined #openhatch
+<br />
+<a href="#03:08:14" name="03:08:14" class="time">[03:08:14]</a> -!- <span class="quit">mindspillage</span> has quit [Changing host]
+<br />
+<a href="#03:08:17" name="03:08:17" class="time">[03:08:17]</a> -!- <span class="join">mindspillage</span> [mindspillage!~kat@wikimedia/KatWalsh/x-0001] has joined #openhatch
+<br />
+<a href="#03:14:46" name="03:14:46" class="time">[03:14:46]</a> -!- <span class="quit">JasonWoof</span> has quit [Ping timeout: 276 seconds]
+<br />
+<a href="#03:20:53" name="03:20:53" class="time">[03:20:53]</a> -!- <span class="quit">lkuper</span> has quit [Read error: Operation timed out]
+<br />
+<a href="#03:28:53" name="03:28:53" class="time">[03:28:53]</a> -!- <span class="join">JasonWoof</span> [JasonWoof!~JasonWoof@c-174-63-42-150.hsd1.vt.comcast.net] has joined #openhatch
+<br />
+<a href="#03:28:53" name="03:28:53" class="time">[03:28:53]</a> -!- <span class="quit">JasonWoof</span> has quit [Changing host]
+<br />
+<a href="#03:28:53" name="03:28:53" class="time">[03:28:53]</a> -!- <span class="join">JasonWoof</span> [JasonWoof!~JasonWoof@fsf/member/herkamire] has joined #openhatch
+<br />
+<a href="#03:31:36" name="03:31:36" class="time">[03:31:36]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> mlinksva: I am struggling to figure out what the interesting things about our being at PyCon were.
+<br />
+<a href="#03:32:13" name="03:32:13" class="time">[03:32:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Maybe I am just tired, though.
+<br />
+<a href="#03:32:40" name="03:32:40" class="time">[03:32:40]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I think the only especially remarkable things are us having a booth where we people donated for almost two dozen T-shirts, and that being there led to the announce list growing almost 50%
+<br />
+<a href="#03:32:54" name="03:32:54" class="time">[03:32:54]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And that I met Tariq there who basically insisted we go to UMass.
+<br />
+<a href="#03:33:12" name="03:33:12" class="time">[03:33:12]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Oh, and that Scaling Community Diversity Outreach had good Q&amp;A.
+<br />
+<a href="#03:33:38" name="03:33:38" class="time">[03:33:38]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I guess hallway track-wise, I had some great conversations with people about Scrapy.
+<br />
+<a href="#03:34:08" name="03:34:08" class="time">[03:34:08]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And the hallway track is what led to me seeing paultag at the recent Transparency Camp, since Sunlight-y people were like "OMG LET'S OPENHATCHIFY TCAMP" which was cool!
+<br />
+<a href="#03:34:27" name="03:34:27" class="time">[03:34:27]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And we managed to distribute over 2500 stickers!
+<br />
+<a href="#03:34:29" name="03:34:29" class="time">[03:34:29]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> (-:
+<br />
+<a href="#03:34:36" name="03:34:36" class="time">[03:34:36]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> But that fact is I think in the original pre-pycon post.
+<br />
+<a href="#03:34:58" name="03:34:58" class="time">[03:34:58]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Oh, and that all the lovely people speaking on my panel run OpenHatch affiliated events, and we could link to the slides or video.
+<br />
+<a href="#03:35:13" name="03:35:13" class="time">[03:35:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I think the video of that talk is the best thing, and maybe that should just be embedded front and center, and the rest can be a sequence of bullet points.
+<br />
+<a href="#03:35:23" name="03:35:23" class="time">[03:35:23]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Is it okay to write short blog posts? I suppose it is.
+<br />
+<a href="#03:35:58" name="03:35:58" class="time">[03:35:58]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Oh, and the fun of that panel, combined with hallway track and BoF conversations, led us to suggesting we work with PSF more hands-on doing more diversity outreach within existing Python user groups.
+<br />
+<a href="#03:36:00" name="03:36:00" class="time">[03:36:00]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> paulproteus: let me know if you want more metadata on the page <a href="http://pyvideo.org/video/1687/scaling-community-diversity-outreach" target="_blank">http://pyvideo.org</a>
+<br />
+<a href="#03:36:03" name="03:36:03" class="time">[03:36:03]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> There'll be an announcement about that soon.
+<br />
+<a href="#03:36:06" name="03:36:06" class="time">[03:36:06]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> like more urls or something
+<br />
+<a href="#03:36:16" name="03:36:16" class="time">[03:36:16]</a> <span class="person" style="color:#3d2f7d">* paulproteus is thinking aloud</span>
+<br />
+<a href="#03:36:28" name="03:36:28" class="time">[03:36:28]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> skay_: Thanks! For one thing, can you add Daniel Choi as a speaker?
+<br />
+<a href="#03:36:34" name="03:36:34" class="time">[03:36:34]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> paulproteus: ps: <a href="http://pyvideo.org/speaker/97/asheesh-laroia" target="_blank">http://pyvideo.org</a>
+<br />
+<a href="#03:36:36" name="03:36:36" class="time">[03:36:36]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> And Naomi Ceder?
+<br />
+<a href="#03:36:52" name="03:36:52" class="time">[03:36:52]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> let me try! here's hoping I don't break stuff :)
+<br />
+<a href="#03:37:04" name="03:37:04" class="time">[03:37:04]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Yay!
+<br />
+<a href="#03:38:02" name="03:38:02" class="time">[03:38:02]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Is it possible to link to the slides in some reasonable way? <a href="https://speakerdeck.com/pyconslides/scaling-community-diversity-outreach-a-panel-with-asheesh-laroia-jessica-mckellar-dana-bauer-and-daniel-choi" target="_blank">https://speakerdeck.com</a>
+<br />
+<a href="#03:38:16" name="03:38:16" class="time">[03:38:16]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Aww, this is not the whole set.
+<br />
+<a href="#03:38:21" name="03:38:21" class="time">[03:38:21]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> So I guess we should fix that.
+<br />
+<a href="#03:38:47" name="03:38:47" class="time">[03:38:47]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> paulproteus: yes, go ahead and give me all the links you'd like in there
+<br />
+<a href="#03:38:54" name="03:38:54" class="time">[03:38:54]</a> <span class="person" style="color:#9004c9">&lt;paultag&gt;</span> \o/
+<br />
+<a href="#03:38:55" name="03:38:55" class="time">[03:38:55]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I think I want no new ones.
+<br />
+<a href="#03:39:17" name="03:39:17" class="time">[03:39:17]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Read my lips. No new links.
+<br />
+<a href="#03:40:02" name="03:40:02" class="time">[03:40:02]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> reload, see if you like it
+<br />
+<a href="#03:40:18" name="03:40:18" class="time">[03:40:18]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> Isn't will awesome?
+<br />
+<a href="#03:41:13" name="03:41:13" class="time">[03:41:13]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> It is great!
+<br />
+<a href="#03:41:40" name="03:41:40" class="time">[03:41:40]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> Yes, willkg is awesome!
+<br />
+<a href="#03:42:15" name="03:42:15" class="time">[03:42:15]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> (oh, but please don't link the slides for now)
+<br />
+<a href="#03:42:39" name="03:42:39" class="time">[03:42:39]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> woa! did you know that pycon2013 had all the slides there?
+<br />
+<a href="#03:43:08" name="03:43:08" class="time">[03:43:08]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> ARG I ALREADY DID
+<br />
+<a href="#03:43:35" name="03:43:35" class="time">[03:43:35]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> (they're incomplete so I'd rather wait)
+<br />
+<a href="#03:44:09" name="03:44:09" class="time">[03:44:09]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> (sorry!)
+<br />
+<a href="#03:44:14" name="03:44:14" class="time">[03:44:14]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> let me get rid of that
+<br />
+<a href="#03:44:26" name="03:44:26" class="time">[03:44:26]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> I'll fix it on Wed
+<br />
+<a href="#03:44:31" name="03:44:31" class="time">[03:44:31]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> argv
+<br />
+<a href="#03:44:33" name="03:44:33" class="time">[03:44:33]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> kwarg!
+<br />
+<a href="#03:44:34" name="03:44:34" class="time">[03:44:34]</a> <span class="person" style="color:#3d2f7d">&lt;paulproteus&gt;</span> (-:
+<br />
+<a href="#03:44:35" name="03:44:35" class="time">[03:44:35]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> no more slides
+<br />
+<a href="#03:44:40" name="03:44:40" class="time">[03:44:40]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> ok, next time you are ready, tell me or will probably and we can add hte link back in
+<br />
+<a href="#03:44:53" name="03:44:53" class="time">[03:44:53]</a> <span class="person" style="color:#bcba1c">&lt;skay_&gt;</span> I don't know who else has admin on pyvideo.org but I know we do
+<br />
+</body>
+</html>
